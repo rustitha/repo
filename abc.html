@@ -1,3 +1,136 @@
-<html>
-    <h1>Hi there</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relyance AI - Official Site</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            display: flex; 
+            flex-direction: column; 
+            min-height: 100vh;
+            background-color: #f4f7f6;
+        }
+        .content { 
+            flex-grow: 1; 
+            padding: 40px; 
+            text-align: center;
+        }
+        h1 { 
+            color: #1a2a3a; 
+            margin-top: 80px;
+            font-size: 2.5em;
+        }
+        p {
+            color: #555;
+            font-size: 1.1em;
+        }
+
+        /* Style for the Enhanced Consent Banner */
+        .consent-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            color: #333;
+            padding: 20px;
+            box-shadow: 0 -4px 12px rgba(0,0,0,0.1);
+            z-index: 1000; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            border-top: 1px solid #ddd;
+        }
+        .consent-banner-text {
+            max-width: 60%;
+            text-align: left;
+            margin: 0;
+        }
+        .consent-banner-text p {
+            margin: 0;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+        .consent-banner-actions {
+            display: flex;
+            gap: 10px;
+        }
+        .consent-banner-actions button {
+            padding: 10px 20px;
+            border: 1px solid transparent;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 6px;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+        
+        /* Accept Button */
+        #accept-cookies {
+            background-color: #007bff;
+            color: white;
+        }
+        #accept-cookies:hover {
+            background-color: #0056b3;
+        }
+        
+        /* Reject and Customize Buttons */
+        .secondary-btn {
+            background-color: white;
+            color: #007bff;
+            border-color: #007bff;
+        }
+        .secondary-btn:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="content">
+        <h1>Welcome to Relyance AI</h1>
+        <p>We are a leading provider of intelligent compliance and data governance solutions.</p>
+        <p>This is a demonstration of our official home page running securely on Nginx.</p>
+    </div>
+
+    <div class="consent-banner" id="cookie-banner">
+        <div class="consent-banner-text">
+            <p><strong>This website uses essential and third-party cookies.</strong> By clicking "Accept All", you agree to the storing of cookies on your device to enhance site navigation, analyze site usage, and assist in our marketing efforts.</p>
+            <p style="margin-top: 5px;"><a href="#" style="color: #007bff;">View our Cookie Policy for details.</a></p>
+        </div>
+        <div class="consent-banner-actions">
+            <button id="accept-cookies" onclick="handleConsent('accept')">Accept All</button>
+            <button class="secondary-btn" onclick="handleConsent('reject')">Reject All</button>
+            <button class="secondary-btn" onclick="handleConsent('customize')">Customize</button>
+        </div>
+    </div>
+
+    <script>
+        function handleConsent(action) {
+            const banner = document.getElementById('cookie-banner');
+            
+            if (action === 'accept') {
+                alert('Consent Granted: All cookies accepted.');
+                // In a real application, you would set a cookie here and load tracking scripts.
+            } else if (action === 'reject') {
+                alert('Consent Denied: Only necessary cookies will be used.');
+                // In a real application, you would set a cookie here to block non-essential scripts.
+            } else if (action === 'customize') {
+                alert('Customize clicked. This would open a detailed preference center pop-up.');
+                // In a real application, this would show a preference modal.
+            }
+
+            // Hide the banner after a choice is made
+            banner.style.display = 'none';
+        }
+
+        // A basic check to simulate if a user has already consented 
+        // (In a real scenario, this would check a cookie)
+        // For this demo, the banner appears every time.
+    </script>
+</body>
 </html>
