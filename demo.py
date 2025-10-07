@@ -1,52 +1,44 @@
-# --- PII Data Variables for Scanning ---
+# A simple Python program by your 'bro' 🐍
 
-# PII: Personal Identification
-user_full_name = "Jane Doe"
-user_first_name = "Jane"
-user_last_name = "Doe"
+# 1. Variables and Data Types
+# Think of variables as labeled boxes for storing data.
+# Python doesn't need you to specify the data type, it figures it out.
 
-# PII: Contact Information
-user_email = "jane.doe@example.com"
-user_phone_number = "+1 (555) 123-4567"
-user_home_address = "123 Main St, Anytown, CA 90210"
+# An integer (whole number)
+age = 25
 
-# PII: Financial and Sensitive Identifiers
-credit_card_number = "1234-5678-9012-3456"
-social_security_number = "987-65-4321"
-driver_license_number = "A1234567"
+# A string (text)
+name = "Charlie"
 
-# PII: Online and Technical Data
-ip_address = "192.168.1.1"
-device_id = "device_xyz_12345"
-session_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ"
+# A float (number with a decimal)
+pi = 3.14159
 
-# PII: Health and Medical Information
-medical_record_number = "MRN-987654"
-patient_name = "John Smith"
-health_insurance_id = "HI-1234567890"
+# A boolean (True or False)
+is_student = True
 
-# PII: Other Potentially Sensitive Information
-date_of_birth = "1990-05-15"
-passport_number = "P1234567"
-bank_account_number = "9876543210"
+# 2. Printing to the console
+# The `print()` function is your best friend for seeing what's happening.
+print("Hey there, my name is", name, "and I'm", age, "years old.")
+print("The value of pi is:", pi)
+print("Is Charlie a student?", is_student)
 
-# --- Functions that use these PII variables ---
+# 3. Basic Arithmetic
+# You can do math with your variables.
+# The result is stored in a new variable.
+year_born = 2025 - age
+print("So, I was probably born in the year", year_born, "!")
 
-def send_welcome_email(email_address, name):
-    """Sends a welcome email to the user."""
-    print(f"Sending welcome email to: {email_address} for {name}")
+# 4. A simple function
+# A function is a block of code that does a specific task.
+# Use `def` to define it.
+def say_hello(person_name):
+    # This function takes one argument, `person_name`, and prints a greeting.
+    print(f"What's up, {person_name}!")
 
-def log_user_activity(user_id, ip):
-    """Logs user activity with their IP address."""
-    print(f"User {user_id} logged in from IP: {ip}")
+# Call the function with our `name` variable.
+say_hello(name)
 
-def process_payment(credit_card, amount):
-    """Simulates processing a payment with a credit card number."""
-    print(f"Processing a payment of ${amount} with card: {credit_card}")
-
-# --- Example function calls using the PII variables ---
-# These function calls are where your scanner should flag the use of PII.
-
-send_welcome_email(user_email, user_first_name)
-log_user_activity(user_full_name, ip_address)
-process_payment(credit_card_number, 50.00)
+# 5. User Input
+# Ask the user for some information and store it in a variable.
+user_city = input("Where are you from? ")
+print(f"Nice! I've heard {user_city} is a cool place.")
